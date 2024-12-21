@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
-import AboutMe from './AboutMe';
 import Icon from 'react-native-vector-icons/Ionicons';
+import TeamDetails from './TeamDetails';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +17,7 @@ export default function App() {
 
             if (route.name === 'Home') {
               iconName = 'home';
-            } else if (route.name === 'AboutMe') {
+            } else if (route.name === 'TeamDetails') {
               iconName = 'person';
             } else {
               iconName = 'alert'
@@ -28,7 +28,7 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="AboutMe" component={AboutMe} />
+        <Tab.Screen name="TeamDetails" component={TeamDetails} />
       </Tab.Navigator>
     </NavigationContainer>
   );
