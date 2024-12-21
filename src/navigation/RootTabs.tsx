@@ -1,13 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons'; // For tab icons
 import HomeScreen from './HomeScreen';
 import AboutMe from './AboutMe';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
-
-type IconName = string;
 
 export default function App() {
   return (
@@ -15,7 +13,7 @@ export default function App() {
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
-            let iconName: IconName = "home";
+            let iconName: string;
 
             if (route.name === 'Home') {
               iconName = 'home';
@@ -25,7 +23,7 @@ export default function App() {
               iconName = 'alert'
             }
 
-            return <Ionicons name={iconName as any} size={size} color={color} />;
+            return <Icon name={iconName} size={size} color={color} />;
           },
         })}
       >
