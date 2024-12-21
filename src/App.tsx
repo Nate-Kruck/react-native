@@ -1,14 +1,14 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
 import RootTabs from './navigation/RootTabs';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
   return (
-    <RootTabs />
+    <SafeAreaProvider>
+      <GestureHandlerRootView>
+        <RootTabs />
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
   );
 }
